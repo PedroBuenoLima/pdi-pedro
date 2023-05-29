@@ -4,8 +4,6 @@ import './header.scss'
 import { CartHeaderIcon } from '../assets/CartHeaderIcon';
 import SearchIcon from '../assets/SearchIcon';
 
-
-
 interface HeaderProps {
   onSearch: (searchValue: string) => void;
 }

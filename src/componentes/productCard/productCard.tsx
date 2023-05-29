@@ -1,17 +1,18 @@
 import React from 'react';
 import './product-card.scss';
+import { Product } from '../../types/Product';
 
 interface ProductCardProps {
-  product: {
-    id: number;
-    name: string;
-    price: number;
-    imageUrl: string;
-    content: string;
-  };
+  product: Product;
+  addToCart: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart }) => {
+
+  const handleButtonClick = () => {
+    addToCart(product);
+  };
+
   return (
     <div>
       <div className="product-card-container">
@@ -23,7 +24,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <p>{product.content}</p>
         </div>
       </div>
-        <button className='product-card-button' type="submit">Preço: R${product.price}</button>
+        <button className='product-card-button' type="submit" onClick={handleButtonClick}>
+          Preço: R${product.price}
+        </button>
     </div>
   );
 };
