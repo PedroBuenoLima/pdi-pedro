@@ -3,7 +3,6 @@ import footer from '../assets/footer.png'
 import instagramIcon from '../assets/instagramIcon.svg'
 import facebookIcon from '../assets/facebookIcon.svg'
 import whatsappIcon from '../assets/whatsappIcon.svg'
-import tripadvisor from '../assets/tripadvisor.jpg'
 import rioCristo from '../assets/rioCristo.png'
 
 import './footer.scss'
