@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './componentes/header/index';
-import './App.css';
+import './App.scss';
 import Banner from './componentes/banner';
 
 const App: React.FC = () => {
