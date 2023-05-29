@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './componentes/header/index';
 import './App.scss';
 import Banner from './componentes/banner';
+import ProductList from './componentes/productCard/productList';
 
 const App: React.FC = () => {
 
@@ -10,9 +11,14 @@ const App: React.FC = () => {
   };
   
   return (
-    <div className="app-container">
-      <Header onSearch={handleSearch}/>
-      <Banner altText="banner principal" />
+    <div>
+      <div className="">
+        <Header onSearch={handleSearch}/>
+      </div>
+      <div className='app-container'>
+        <Banner altText="banner principal" />
+        <ProductList/>
+      </div>
     </div>
   );
 };
