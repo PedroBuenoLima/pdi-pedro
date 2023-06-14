@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface CartHeaderIconProps {
   width?: number
   height?: number

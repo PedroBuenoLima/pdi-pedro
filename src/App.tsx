@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Header from './componentes/header/Header';
+import Header from './componentes/Header';
 import './App.scss';
-import Banner from './componentes/banner';
-import ProductList from './componentes/productCard/productList';
+import Banner from './componentes/Banner';
+import ProductList from './componentes/ProductList';
 import { Product } from '../src/types/Product';
-import Footer from './componentes/footer/Footer';
+import Footer from './componentes/Footer';
+import { StoreContextProvider } from './contexts/StoreContext'
 
 
 const App: React.FC = () => {
@@ -12,25 +13,22 @@ const App: React.FC = () => {
     // Lógica de pesquisa aqui com base no searchValue
   };
 
-  const [cartItems, setCartItems] = useState<Product[]>([]);
 
-  const handleAddToCart = (product: Product) => {
-    setCartItems([...cartItems, product]);
-  };
-  
   return (
-    <div>
-      <div className="">
-        <Header onSearch={handleSearch}/>
-      </div>
-      <div className='app-container'>
-        <Banner altText="banner principal" />
-        <ProductList handleAddToCart={handleAddToCart} />
-      </div>
+    <StoreContextProvider>
       <div>
-        <Footer/>
+        <div className="header-section">
+          <Header onSearch={handleSearch}/>
+        </div>
+        <div className='app-container'>
+          <Banner altText="banner principal" />
+          <ProductList/>
+        </div>
+        <div>
+          <Footer/>
+        </div>
       </div>
-    </div>
+    </StoreContextProvider>
   );
 };
 

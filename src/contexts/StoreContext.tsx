@@ -1,29 +1,43 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { ReactNode, createContext, useContext, useState } from 'react'
 import { Product } from '../types/Product'
+import { products } from '../constants'
 
-interface StoreProps {
-  product: Product;
-  
+interface StoreContextProps {
+  children?: ReactNode
+  products?: Product[];
+  cartItems?: Product[];
+  setCartItems?: (cartItems: Product[]) => void
+  deleteProductFromCart?: (product: Product) => void;
 }
 
-export interface StoreContextProps {
-
-}
 
 const StoreContext = createContext<StoreContextProps | null>(null)
-const [cartItems, setCartItems] = useState<Product[]>([]);
-const handleAddToCart = (product: Product) => {
-  setCartItems([...cartItems, product]);
-};
+
 
 export const StoreContextProvider = ({
- 
+ children,
+  
 }: StoreContextProps) => {
   
+  const [cartItems, setCartItems] = useState<Product[]>([]);
+
+  function deleteProductFromCart(product: Product): void {
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== product.id)
+    );
+  }
+  
+
   return (
     <StoreContext.Provider
-      value={{}}
+      value={{
+        products,
+        cartItems,
+        setCartItems,
+        deleteProductFromCart,
+      }}
     >
+      {children}
     </StoreContext.Provider>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import bannerInBuzios from '../assets/bannerInBuzios.jpg'
+import bannerInBuzios from '../../assets/bannerInBuzios.jpg'
 import './banner.scss'
 
 

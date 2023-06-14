@@ -1,0 +1,141 @@
+.minicart-container {
+  width: 430px;
+  height: calc(100% - 60px);
+  position: fixed;
+  right: 0;
+  top: 56px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 0.5px solid gray;
+  box-shadow: -1px 1px 4px gray;
+}
+.minicard-container{
+  height: 110px;
+  margin-bottom: 5px;
+}
+
+.minicart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+}
+
+.minicart-title {
+  font-weight: 700;
+  font-size: 27px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-left: 50px;
+  background-color: white;
+  border: 0;
+}
+
+.minicart-data {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: unset;
+}
+
+.minicart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.minicart-empty p {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.minicart-product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  max-height: 110px;
+}
+
+.minicart-product-container img {
+  height: 70px;
+  border-radius: 4px;
+  margin: 5px;
+  border: 0.5px solid gray;
+  box-shadow: -1px 1px 4px gray;
+}
+
+.minicart-product-container h3,
+.minicart-product-container p {
+  font-weight: 700;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  text-align: center;
+}
+
+.minicart-product-button{
+  position: relative;
+  top: -27px;
+  right: -44px;
+}
+
+.minicart-add-button{
+  font-weight: 700;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  text-align: center;
+}
+
+.minicart-footer {
+  margin: 20px;
+  position: sticky;
+  bottom: 0;
+  padding: 10px;
+  border-top: 1px solid gray;
+
+  p {
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    text-align: center;
+  }
+
+  .minicart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 80%;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+  }
+}
+

@@ -1,17 +1,19 @@
 import React from 'react';
 import './product-card.scss';
 import { Product } from '../../types/Product';
+import { useStoreContext } from '../../contexts/StoreContext'
 
 interface ProductCardProps {
   product: Product;
-  addToCart: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart }) => {
+const ProductCard = ({product}:ProductCardProps) => {
 
-  const handleButtonClick = () => {
-    addToCart(product);
-  };
+  const { setCartItems, cartItems} = useStoreContext()
+
+  if (!setCartItems || !cartItems) {
+    return null
+  }
 
   return (
     <div>
@@ -24,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart }) => {
           <p>{product.content}</p>
         </div>
       </div>
-        <button className='product-card-button' type="submit" onClick={handleButtonClick}>
+        <button className='product-card-button' type="submit" onClick={()=>setCartItems([...cartItems, product])}>
           Preço: R${product.price}
         </button>
     </div>
