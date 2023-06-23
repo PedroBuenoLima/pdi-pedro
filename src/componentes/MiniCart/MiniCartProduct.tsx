@@ -21,7 +21,7 @@ const MiniCartProdct = ({ product }: MiniCartProdctProps) => {
   return (
     <div className="minicard-container">
       <div className="minicart-product-container">
-        <img src={product.imageUrl} alt={product.name} />
+        <img src={product.image_url} alt={product.name} />
         <div>
           <h3>{product.name}</h3>
           <p>Preço R${product.price}</p>

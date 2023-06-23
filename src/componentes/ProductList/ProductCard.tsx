@@ -19,7 +19,7 @@ const ProductCard = ({product}:ProductCardProps) => {
     <div>
       <div className="product-card-container">
         <div>
-          <img src={product.imageUrl} alt={product.name} />
+          <img src={product.image_url} alt={product.name} />
           <h3>{product.name}</h3>
         </div>
         <div className='product-card-info'>
