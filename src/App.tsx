@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './componentes/Header';
 import './App.scss';
 import Banner from './componentes/Banner';
 import ProductList from './componentes/ProductList';
-import { Product } from '../src/types/Product';
 import Footer from './componentes/Footer';
 import { StoreContextProvider } from './contexts/StoreContext'
 

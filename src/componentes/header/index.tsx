@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
 
   return (
     <div className='header-container'>
-      <img src={logo} alt="Header Image" />
+      <img src={logo}/>
       <form className="search-container" onSubmit={handleSearchSubmit}>
         <input
           className='search-input'
