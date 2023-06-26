@@ -2,8 +2,6 @@ import CloseIcon from "../../assets/CloseIcon";
 import { useStoreContext } from "../../contexts/StoreContext";
 import { Product } from "../../types/Product";
 
-
-
 interface MiniCartProdctProps {
   product: Product;
 }
@@ -16,13 +14,11 @@ const MiniCartProdct = ({ product }: MiniCartProdctProps) => {
     return null
   }
 
-
-
   return (
     <div className="minicard-container">
       <div className="minicart-product-container">
         <img src={product.image_url} alt={product.name} />
-        <div>
+        <div className="minicart-title-price-container">
           <h3>{product.name}</h3>
           <p>Preço R${product.price}</p>
         </div>

@@ -12,8 +12,8 @@
   box-shadow: -1px 1px 4px gray;
 }
 .minicard-container{
-  height: 110px;
-  margin-bottom: 5px;
+  height: 120px;
+  margin-bottom: 10px;
 }
 
 .minicart-header {
@@ -46,12 +46,11 @@ button {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 20px;
-  max-height: 500px;
   overflow-y: auto;
   overflow-x: unset;
+  height: 100%;
 }
 
 .minicart-empty {
@@ -75,15 +74,21 @@ button {
   padding: 5px;
   border: 0.5px solid gray;
   border-radius: 4px;
-  max-height: 110px;
+  height: 110px;
+  max-width: 375px;
 }
 
 .minicart-product-container img {
-  height: 70px;
+  width: 130px;
+  height: 90px;
   border-radius: 4px;
   margin: 5px;
   border: 0.5px solid gray;
   box-shadow: -1px 1px 4px gray;
+}
+
+.minicart-title-price-container{
+  width: 230px;
 }
 
 .minicart-product-container h3,
@@ -111,12 +116,13 @@ button {
 }
 
 .minicart-footer {
+  height: 90px;
   margin: 20px;
   position: sticky;
   bottom: 0;
   padding: 10px;
   border-top: 1px solid gray;
-
+  width: 365px;
   p {
     font-weight: 700;
     font-size: 15px;
@@ -138,5 +144,20 @@ button {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
   }
+
+  .minicart-container-fixed {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Define a altura máxima do container */
+  }
+  
+  .minicart-data {
+    flex-grow: 1; /* Faz com que a área de dados do carrinho ocupe o espaço disponível */
+  }
+  
+  .minicart-footer {
+    flex-shrink: 0; /* Mantém o footer fixo na parte inferior */
+  }
+  
 }
 

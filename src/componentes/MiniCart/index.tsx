@@ -17,14 +17,14 @@ const MiniCart = ({ cartItemQuantity,isCartOpen, setIsCartOpen }: MiniCartProps)
 
   const calcularTotal = () => {
     let total = 0;
-
+  
     cartItems?.forEach((item) => {
-      total += item.price;
+      total += Number(item.price);
     });
-
+  
     return total;
   };
-
+  
   return (
     <div className='minicart-container'>
       <div className='minicart-header'>
@@ -40,7 +40,7 @@ const MiniCart = ({ cartItemQuantity,isCartOpen, setIsCartOpen }: MiniCartProps)
           <MiniCartProductList />
         }
       </div>
-      <div className='minicart-footer'>
+      <div className='minicart-footer minicart-container minicart-container-fixed'>
         <div>
           <p> Total R$ {calcularTotal().toFixed(2)} </p>
         </div>

@@ -4,6 +4,7 @@ import { useStoreContext } from '../../contexts/StoreContext'
 const MiniCartProductList = () => {
  
   const { cartItems } = useStoreContext()
+
   return (
     <div>
       <div className='minicart-product-list'>

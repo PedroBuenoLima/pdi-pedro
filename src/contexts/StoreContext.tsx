@@ -1,6 +1,6 @@
 import React, { ReactNode, createContext, useContext, useState } from 'react'
 import { Product } from '../types/Product'
-import { products } from '../constants'
+import usePasseiosData from '../hooks/usePasseiosData'
 
 interface StoreContextProps {
   children?: ReactNode
@@ -10,23 +10,19 @@ interface StoreContextProps {
   deleteProductFromCart?: (product: Product) => void;
 }
 
-
 const StoreContext = createContext<StoreContextProps | null>(null)
 
-
 export const StoreContextProvider = ({
- children,
-  
+  children,
 }: StoreContextProps) => {
-  
   const [cartItems, setCartItems] = useState<Product[]>([]);
+  const products: Product[] = usePasseiosData();
 
   function deleteProductFromCart(product: Product): void {
     setCartItems((prevCartItems) =>
       prevCartItems.filter((item) => item.id !== product.id)
     );
   }
-  
 
   return (
     <StoreContext.Provider
@@ -53,4 +49,3 @@ export const useStoreContext = () => {
 
   return context
 }
-
